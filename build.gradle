@@ -1,0 +1,27 @@
+apply plugin: 'java'
+
+repositories {
+	jcenter()
+}
+
+
+
+dependencies {
+	compile group: 'org.apache.hadoop', name: 'hadoop-common', version: '2.7.0'
+
+	compile group: 'org.apache.hadoop', name: 'hadoop-mapreduce-client-core', version: '2.7.0'
+
+	compile group: 'org.apache.hadoop', name: 'hadoop-hdfs', version: '2.7.0'
+
+	//runtime group: 'org.apache.hive', name: 'hive-jdbc', version: '2.1.0'
+}
+
+task runApp(type: JavaExec) {
+	main = 'example.HadoopFSConnection'
+	classpath = sourceSets.main.runtimeClasspath
+}
+
+// wrapper
+task wrapper(type: Wrapper) {
+	gradleVersion = "${gradleVersion}"
+}
