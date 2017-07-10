@@ -33,7 +33,7 @@ dependencies {
 }
 
 task runApp(type: JavaExec) {
-	main = 'example.HadoopFSConnection'
+	main = 'example.ReadFileDataToConsole'
 	classpath = sourceSets.main.runtimeClasspath
 }
 
